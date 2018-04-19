@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-        console.log('The color is green.');
+    chrome.storage.sync.set({'toggle': 'on'}, function() {
+        //
     });
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
         chrome.declarativeContent.onPageChanged.addRules([{
@@ -15,9 +15,38 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        console.log("github");
+        if(request.type == "status"){
+            chrome.storage.local.get(['toggle'], function(result) {
+                sendResponse({response: result.toggle});
+            });
+            return true;
+        }
+        if (request.type == "toggle"){
+            toggleOnOff();
+        }
         if( request.message === "github" ) {
-            chrome.tabs.create({"url": request.url});
+            openGithub();
         }
     }
 );
+
+function toggleOnOff(){
+    chrome.storage.local.get(['toggle'], function(result) {
+        var toggle;
+        if(result.toggle == 'on'){
+            toggle = 'off';
+        } else {
+            toggle = 'on';
+        }
+        chrome.storage.local.set({
+            'toggle': toggle
+        }, function () {
+            console.log("Spoilerfree for Twitch: " + toggle);
+        });
+        
+    });
+}
+
+function openGithub(){
+    chrome.tabs.create({"url": request.url});
+}
