@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                width: 300px;
+                height: 50px;
+                text-align: center;
+                background-color: #fafafa
+            }
+
+            .title {
+                margin-top: 30px;
+            }
+
+            .subTitle {
+                margin-top: 45px;
+            }
+
+            #github {
+                cursor: pointer;
+                width: 100%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                text-decoration: none;
+                color: skyblue;
+            }
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                margin-bottom: 30px;
+            }
+
+            .switch input {display:none;}
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 34px;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 50%;
+            }
+
+            input:checked + .slider {
+                background-color:#2196F3;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+            }
+        </style>
+    </head>
+    <body>        
+        <h2 class="title">Spoilerfree for Twitch</h2>
+        <h4>v1.0.0</h4>
+        <h3 class="subTitle" >Toggle On/Off</h3>
+        <label class="switch">
+            <input id="toggle" type="checkbox" onchange="toggle();">
+            <span class="slider"></span>
+        </label>
+        <div id="github">
+            <h4>GitHub</h4>
+        </div>
+
+        <script type="text/javascript" src="./popup.js"></script>
+    </body>
+</html>
