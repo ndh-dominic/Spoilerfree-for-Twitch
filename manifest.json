@@ -20,7 +20,15 @@
         "128": "images/icon128.png"
     },
     "background": {
-        "scripts": ["hider.js"],
+        "scripts": ["background.js"],
         "persistent": false
-    }
+    },
+    "content_scripts":
+    [
+        {
+            "matches": ["*://*.twitch.tv/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ]
 }
