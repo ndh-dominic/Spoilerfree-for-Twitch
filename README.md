@@ -1,5 +1,4 @@
 # Spoilerfree for Twitch
-<<<<<<< HEAD
 Hides Twitch.tv progress and video length
 =======
 
@@ -62,4 +61,3 @@ https://developer.chrome.com/extensions/getstarted
 ## License
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
->>>>>>> 08e8fd3... project structure update
