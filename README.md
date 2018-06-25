@@ -36,6 +36,10 @@ Intented for those who wants to watch e-sport VODs on Twitch.tv, but without get
 
 3. Click the LOAD UNPACKED button and select the 'chrome' directory.
 
+Alternatively, you can install it through Chrome web store
+
+ https://chrome.google.com/webstore/detail/spoilerfree-for-twitch/bdmofbafkffofipoldeknpidhbjhnpck
+
 ## Bugs / Feature Requests
 
 If you find any bugs or have a feature request, please create an issue in [GitHub](https://github.com/ndh-dominic/Spoilerfree-for-Twitch).
