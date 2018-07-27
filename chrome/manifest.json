@@ -1,7 +1,7 @@
 {
     "name": "Spoilerfree for Twitch",
     "short_name": "Spoilerfree",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Hides Twitch.tv progress and video length",
     "manifest_version": 2,
     "permissions": ["declarativeContent", "storage", "tabs"],
