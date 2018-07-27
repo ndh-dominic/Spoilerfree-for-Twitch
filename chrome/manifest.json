@@ -4,7 +4,7 @@
     "version": "1.1",
     "description": "Hides Twitch.tv progress and video length",
     "manifest_version": 2,
-    "permissions": ["declarativeContent", "storage"],
+    "permissions": ["declarativeContent", "storage", "tabs"],
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {

@@ -12,19 +12,19 @@ Intented for those who wants to watch e-sport VODs on Twitch.tv, but without get
   <img src="img/sf1.png" width="318"/>
 </p>
 
--
 
 
 <p align="center">
   <text>With extension off<text>
+  <br>
   <img src="img/sf2.png" width="760"/>
 </p>
 
--
 
 
 <p align="center">
   <text>With extension on<text>
+  <br>
   <img src="img/sf3.png" width="760"/>
 </p>
 

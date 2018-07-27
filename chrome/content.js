@@ -1,16 +1,37 @@
+chrome.runtime.onMessage.addListener(
+    function(message, sender, sendResponse) {
+        if(message.type == "contentToggle"){
+            checkStatus();
+            return true;
+        }
+    }
+);
+
 checkStatus();
 
 function checkStatus(){
     chrome.runtime.sendMessage({type: "status"}, function(response) {
-        if(response.response == "on") hideProgress();
+        if(response.response == "on"){
+            hideProgress();
+        } else {
+            showProgress();
+        }
     });
 }
 
-function hideProgress() {
+function hideProgress(){
+    setProgress("hidden");
+}
+
+function showProgress(){
+    setProgress("visible");
+}
+
+function setProgress(visibility) {
     var css = [
 	    ".player-seek, .length, .progress-bar-wrapper, .video-preview-card__preview-overlay-stat, .tw-progress-bar, .pl-card__info",
 	    "    {",
-	    "        visibility: hidden;",
+	    "        visibility: " + visibility + ";",
 	    "    }"
     ].join("\n");
 

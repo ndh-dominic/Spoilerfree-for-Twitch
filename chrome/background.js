@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener(
             return true;
         }
         if (request.type == "toggle"){
-            toggleOnOff();
+            toggleOnOff(sender.id);
             return true;
         }
         if( request.message == "github" ) {
@@ -32,7 +32,8 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
-function toggleOnOff(){
+function toggleOnOff(id){
+    //Change and store variable
     chrome.storage.local.get(['toggle'], function(result) {
         var toggle;
         if(result.toggle == 'on'){
@@ -45,8 +46,13 @@ function toggleOnOff(){
         }, function () {
             console.log("Spoilerfree for Twitch: " + toggle);
         });
-        
     });
+
+    //Update UI
+    chrome.tabs.query({ active: true, windowType: "normal", currentWindow: true},function(tab){
+        chrome.tabs.sendMessage(tab[0].id, {type: "contentToggle"});
+    });
+    
 }
 
 function openGithub(request){
